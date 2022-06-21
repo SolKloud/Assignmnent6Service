@@ -4,7 +4,6 @@ import { RouterModule,Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { InfoComponent } from './info/info.component';
 import { NewEmployeeComponent } from './new-employee/new-employee.component';
-import { EmployeeDetailsComponent } from './employee-details/employee-details.component';
 import { DetailsComponent } from './details/details.component';
 import { AboutComponent } from './about/about.component';
 
@@ -15,13 +14,11 @@ const appRoutes: Routes = [
   {
     path: 'new', component: NewEmployeeComponent
   },
-
   {
-    path: 'display', component: EmployeeDetailsComponent
+    path:'detail',component:DetailsComponent
   },
-
   {
-    path: 'about', component: AboutComponent
+    path: 'about/:Employee/:Designation', component: AboutComponent
   }
 
 ]
@@ -34,7 +31,6 @@ const appRoutes: Routes = [
     AppComponent,
     InfoComponent,
     NewEmployeeComponent,
-    EmployeeDetailsComponent,
     DetailsComponent,
     AboutComponent,
   ],

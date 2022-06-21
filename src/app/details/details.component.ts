@@ -8,23 +8,24 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./details.component.css']
 })
 export class DetailsComponent {
-  @Input() task;
- 
-  constructor(private dataService:DataService,private router: Router, private route: ActivatedRoute){}
+  task: {Employee: string, Designation: string}[] = [];
+
+  constructor(private dataService: DataService ,private router: Router, private route: ActivatedRoute){
+  }
+
+  ngOnInit() {
+   this.task = this.dataService.tasks;
+    console.log(this.task);
+ }
+
+
+
+ reloadComp() {
+   this.router.navigate(['/detail'], {relativeTo: this.route});
+ }
 
   onEdit(i:number,Designation:string){
     this.dataService.changeDesignation({index:i, NewDesignation: Designation});
   }
-
-
-  
-
-  load(detail) {
-  //  console.log(detail);
-  //  this.dataService.statusUpdated.emit(detail);
-    this.router.navigate(['/about'], {relativeTo: this.route});
-     
-  }
-
 
 }

@@ -7,7 +7,17 @@ import { DataService } from '../services/data.service';
   templateUrl: './about.component.html',
   styleUrls: ['./about.component.css']
 })
-export class AboutComponent  {
-  
+export class AboutComponent implements OnInit {
+  user:{Employee:string,Designation:number}
+
+  constructor(private route:ActivatedRoute){}
+
+  ngOnInit():void{
+     this.user={
+      Employee:this.route.snapshot.params['Employee'],
+      Designation:this.route.snapshot.params['Designation']
+
+     };
+  }
    
 }

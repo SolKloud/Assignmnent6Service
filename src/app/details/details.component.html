@@ -8,9 +8,10 @@
     </thead>
     <tbody>
         <tr *ngFor="let detail of task ;let i=index">
-            <td><button (click)="load(detail)">{{detail.Employee}}</button></td>
+            <td><a [routerLink]="'/about/'+detail.Employee+'/'+detail.Designation">{{detail.Employee}}</a></td>
             <td>{{detail.Designation}}</td>
             <td><button (click)="onEdit(i,'Manager')">Edit</button></td>
         </tr>
     </tbody>
 </table>
+<button (click)="reloadComp()">Reload</button>
