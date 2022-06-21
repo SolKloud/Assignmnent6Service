@@ -24,8 +24,4 @@ export class DetailsComponent {
    this.router.navigate(['/detail'], {relativeTo: this.route});
  }
 
-  onEdit(i:number,Designation:string){
-    this.dataService.changeDesignation({index:i, NewDesignation: Designation});
-  }
-
 }

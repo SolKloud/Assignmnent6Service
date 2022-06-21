@@ -6,7 +6,7 @@ import { InfoComponent } from './info/info.component';
 import { NewEmployeeComponent } from './new-employee/new-employee.component';
 import { DetailsComponent } from './details/details.component';
 import { AboutComponent } from './about/about.component';
-
+import { FormsModule } from '@angular/forms';
 const appRoutes: Routes = [
   {
     path: 'Info', component: InfoComponent,
@@ -18,7 +18,7 @@ const appRoutes: Routes = [
     path:'detail',component:DetailsComponent
   },
   {
-    path: 'about/:Employee/:Designation', component: AboutComponent
+    path: 'about/:Id/:Employee/:Designation', component: AboutComponent
   }
 
 ]
@@ -36,7 +36,8 @@ const appRoutes: Routes = [
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

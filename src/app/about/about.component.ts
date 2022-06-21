@@ -8,16 +8,22 @@ import { DataService } from '../services/data.service';
   styleUrls: ['./about.component.css']
 })
 export class AboutComponent implements OnInit {
-  user:{Employee:string,Designation:number}
+  user:{Id:number,Employee:string,Designation:number}
 
-  constructor(private route:ActivatedRoute){}
+  public newDesignation='';
+  constructor(private dataService: DataService,private route:ActivatedRoute){}
 
   ngOnInit():void{
      this.user={
+      Id:this.route.snapshot.params['Id'],
       Employee:this.route.snapshot.params['Employee'],
       Designation:this.route.snapshot.params['Designation']
 
      };
+  }
+
+  onEdit(i:number,Designation:string){
+    this.dataService.changeDesignation({index:i, NewDesignation: Designation});
   }
    
 }
