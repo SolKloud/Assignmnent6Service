@@ -1,0 +1,16 @@
+<table>
+    <thead>
+        <tr>
+            <th>Employee name</th>
+            <th>Designation</th>
+            <th>Edit</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let detail of task ;let i=index">
+            <td><button (click)="load(detail)">{{detail.Employee}}</button></td>
+            <td>{{detail.Designation}}</td>
+            <td><button (click)="onEdit(i,'Manager')">Edit</button></td>
+        </tr>
+    </tbody>
+</table>
