@@ -11,7 +11,7 @@ export class AboutComponent implements OnInit {
   user:{Id:number,Employee:string,Designation:number}
 
   public newDesignation='';
-  constructor(private dataService: DataService,private route:ActivatedRoute){}
+  constructor(private dataService: DataService,private router: Router,private route:ActivatedRoute){}
 
   ngOnInit():void{
      this.user={
@@ -24,6 +24,8 @@ export class AboutComponent implements OnInit {
 
   onEdit(i:number,Designation:string){
     this.dataService.changeDesignation({index:i, NewDesignation: Designation});
+
+    this.router.navigate(['/detail']);
   }
    
 }
